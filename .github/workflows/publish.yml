@@ -1,0 +1,39 @@
+name: Publish package to Maven
+
+on:
+  release:
+    types: [created]
+
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+      MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+            java-version: '17'
+            distribution: 'temurin'
+
+      - uses: gradle/gradle-build-action@v2
+
+      - name: Build Package
+        run: gradle build
+
+      - name: Run Tests
+        run: gradle test
+
+      - name: Publish Package
+        run: gradle publishToSonatype
+
+      - name: Release Package
+        run: gradle closeAndReleaseSonatypeStagingRepository
