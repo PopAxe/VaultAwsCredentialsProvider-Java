@@ -1,9 +1,7 @@
-![](https://github.com/PopAxe/VaultAwsCredentialsProvider-Java/actions/workflows/build.yml/badge.svg) ![](https://img.shields.io/codecov/c/github/PopAxe/VaultAwsCredentialsProvider-Java
-)
-
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.libktx/ktx-module.svg)](https://search.maven.org/artifact/io.github.libktx/ktx-module)
-
-![](https://img.shields.io/github/license/PopAxe/VaultAwsCredentialsProvider-Java)
+![](https://img.shields.io/github/actions/workflow/status/PopAxe/VaultAwsCredentialsProvider-Java/build.yml?label=Build%20Status) 
+![](https://img.shields.io/codecov/c/github/PopAxe/VaultAwsCredentialsProvider-Java?label=Code%20Coverage) 
+[![](https://img.shields.io/maven-central/v/dev.popaxe.aws.credentials/vault-aws-credentials-provider.svg?label=Maven%20Central)](https://search.maven.org/artifact/dev.popaxe.aws.credentials/vault-aws-credentials-provider)
+![](https://img.shields.io/github/license/PopAxe/VaultAwsCredentialsProvider-Java?label=License)
 
 ## Description
 VaultAwsCredentialsProvider is a package that allows you to pass refreshable or static credentials to the AWS v2 SDK.
